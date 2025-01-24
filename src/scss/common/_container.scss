@@ -1,0 +1,20 @@
+@use './mixins' as bp;
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 16px;
+
+  @include bp.media(mobile) {
+    max-width: 320px;
+  }
+  @include bp.media(tablet) {
+    max-width: 768px;
+  }
+
+  @include bp.media(desktop) {
+    padding: 0 84px;
+    max-width: 1440px;
+  }
+}

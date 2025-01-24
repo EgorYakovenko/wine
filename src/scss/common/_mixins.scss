@@ -1,0 +1,26 @@
+@use 'sass:math';
+@use './breakpoints' as bp;
+
+@mixin media($_screen) {
+  @if $_screen == mobile {
+    @media screen and (min-width: bp.$mobile) {
+      @content;
+    }
+  } @else if $_screen == tablet {
+    @media screen and (min-width: bp.$tablet) {
+      @content;
+    }
+  } @else if $_screen == desktop {
+    @media screen and (min-width: bp.$desktop) {
+      @content;
+    }
+  }
+}
+
+@mixin font($_fsz, $_lnh) {
+  font-size: #{$_fsz}px;
+
+  $result: math.div($_lnh, $_fsz);
+
+  line-height: math.div(math.round($result * 100), 100);
+}
