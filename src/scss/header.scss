@@ -1,5 +1,16 @@
 @import './common/vars';
+@import './common/mixins';
 
 .title {
-  color: red;
+  @include media(mobile) {
+    background-color: $accent-pink-800;
+    color: red;
+  }
+
+  @include media(tablet) {
+    color: rgb(21, 255, 0);
+  }
+  @include media(desktop) {
+    color: rgb(4, 0, 252);
+  }
 }
